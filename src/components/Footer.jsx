@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react
 
 const Footer = () => {
   const { translations } = useLanguage();
-  const { footer, nav, contact } = translations;
+  const { footer, nav, contact, services } = translations;
 
   const currentYear = new Date().getFullYear();
 
@@ -103,26 +103,13 @@ const Footer = () => {
                 {footer.services}
               </h5>
               <ul className="footer-links list-unstyled">
-                <li className="mb-2">
-                  <a href="#services" className="footer-link" onClick={(e) => scrollToSection(e, '#services')}>
-                    Dentálna hygiena
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#services" className="footer-link" onClick={(e) => scrollToSection(e, '#services')}>
-                    Bielenie zubov
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#services" className="footer-link" onClick={(e) => scrollToSection(e, '#services')}>
-                    Zubné implantáty
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#services" className="footer-link" onClick={(e) => scrollToSection(e, '#services')}>
-                    Estetická stomatológia
-                  </a>
-                </li>
+                {services.items.slice(0, 4).map((service, index) => (
+                  <li key={index} className="mb-2">
+                    <a href="#services" className="footer-link" onClick={(e) => scrollToSection(e, '#services')}>
+                      {service.title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 

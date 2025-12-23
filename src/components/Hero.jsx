@@ -3,12 +3,13 @@ import { useLanguage } from '../context/LanguageContext';
 import { Calendar, ArrowRight, Shield, Award, Clock } from 'lucide-react';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, translations } = useLanguage();
+  const { hero } = translations;
 
   const features = [
-    { icon: Shield, text: 'Bezpečné ošetrenia', textEn: 'Safe Treatments' },
-    { icon: Award, text: '15+ rokov skúseností', textEn: '15+ Years Experience' },
-    { icon: Clock, text: 'Flexibilné hodiny', textEn: 'Flexible Hours' },
+    { icon: Shield, text: hero.safeText },
+    { icon: Award, text: hero.experienceText },
+    { icon: Clock, text: hero.flexibleText },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -36,7 +37,7 @@ const Hero = () => {
               <span className="badge-icon">
                 <Award size={16} />
               </span>
-              <span>Profesionálna starostlivosť</span>
+              <span>{hero.badge}</span>
             </div>
 
             <h1 className="hero-title display-4 fw-bold mb-4">
@@ -93,7 +94,7 @@ const Hero = () => {
                 </div>
                 <div className="card-content">
                   <span className="card-number">100%</span>
-                  <span className="card-label">Spokojnosť</span>
+                  <span className="card-label">{hero.satisfaction}</span>
                 </div>
               </div>
 
@@ -103,7 +104,7 @@ const Hero = () => {
                 </div>
                 <div className="card-content">
                   <span className="card-number">5000+</span>
-                  <span className="card-label">Pacientov</span>
+                  <span className="card-label">{hero.patients}</span>
                 </div>
               </div>
             </div>

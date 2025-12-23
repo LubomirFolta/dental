@@ -33,7 +33,7 @@ const Contact = () => {
         {/* Section Header */}
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
-            <span className="section-badge mb-3">Kontakt</span>
+            <span className="section-badge mb-3">{contact.badge}</span>
             <h2 className="section-title display-5 fw-bold mb-3">
               {contact.title}
             </h2>

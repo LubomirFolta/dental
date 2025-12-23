@@ -1,5 +1,8 @@
 export const translations = {
   sk: {
+    // Site
+    siteTitle: 'DentalCare - Profesionálna zubná starostlivosť',
+
     // Navbar
     nav: {
       home: 'Domov',
@@ -15,12 +18,22 @@ export const translations = {
       subtitle: 'Profesionálna zubná starostlivosť s ľudským prístupom. Moderné technológie a skúsený tím pre zdravý a krásny úsmev.',
       cta: 'Objednať sa',
       learnMore: 'Zistiť viac',
+      badge: 'Profesionálna starostlivosť',
+      safeText: 'Bezpečné ošetrenia',
+      experienceText: '15+ rokov skúseností',
+      flexibleText: 'Flexibilné hodiny',
+      satisfaction: 'Spokojnosť',
+      patients: 'Pacientov',
     },
 
     // Services Section
     services: {
       title: 'Naše služby',
       subtitle: 'Poskytujeme komplexnú zubnú starostlivosť s využitím najmodernejších technológií',
+      learnMore: 'Zistiť viac',
+      ctaTitle: 'Potrebujete poradiť s výberom služby?',
+      ctaText: 'Kontaktujte nás a radi vám pomôžeme vybrať najlepšie riešenie pre váš úsmev.',
+      ctaButton: 'Kontaktujte nás',
       items: [
         {
           title: 'Dentálna hygiena',
@@ -51,6 +64,8 @@ export const translations = {
 
     // About Section
     about: {
+      badge: 'O nás',
+      experienceYears: 'rokov skúseností',
       title: 'O našej klinike',
       subtitle: 'Viac ako 15 rokov skúseností vo vašich službách',
       description: 'Naša zubná klinika kombinuje najmodernejšie technológie s osobným prístupom ku každému pacientovi. Náš tím skúsených odborníkov sa neustále vzdeláva, aby vám mohol poskytnúť tú najlepšiu starostlivosť.',
@@ -82,6 +97,7 @@ export const translations = {
 
     // Contact Section
     contact: {
+      badge: 'Kontakt',
       title: 'Kontaktujte nás',
       subtitle: 'Sme tu pre vás. Neváhajte nás kontaktovať s akýmikoľvek otázkami.',
       address: 'Adresa',
@@ -116,6 +132,9 @@ export const translations = {
   },
 
   en: {
+    // Site
+    siteTitle: 'DentalCare - Professional Dental Care',
+
     // Navbar
     nav: {
       home: 'Home',
@@ -131,12 +150,22 @@ export const translations = {
       subtitle: 'Professional dental care with a human touch. Modern technology and an experienced team for a healthy, beautiful smile.',
       cta: 'Book Appointment',
       learnMore: 'Learn More',
+      badge: 'Professional Care',
+      safeText: 'Safe Treatments',
+      experienceText: '15+ Years Experience',
+      flexibleText: 'Flexible Hours',
+      satisfaction: 'Satisfaction',
+      patients: 'Patients',
     },
 
     // Services Section
     services: {
       title: 'Our Services',
       subtitle: 'We provide comprehensive dental care using state-of-the-art technology',
+      learnMore: 'Learn More',
+      ctaTitle: 'Need help choosing a service?',
+      ctaText: 'Contact us and we will help you find the best solution for your smile.',
+      ctaButton: 'Contact Us',
       items: [
         {
           title: 'Dental Hygiene',
@@ -167,6 +196,8 @@ export const translations = {
 
     // About Section
     about: {
+      badge: 'About Us',
+      experienceYears: 'years of experience',
       title: 'About Our Clinic',
       subtitle: 'More than 15 years of experience at your service',
       description: 'Our dental clinic combines cutting-edge technology with a personal approach to every patient. Our team of experienced professionals continuously educates themselves to provide you with the best possible care.',
@@ -198,6 +229,7 @@ export const translations = {
 
     // Contact Section
     contact: {
+      badge: 'Contact',
       title: 'Contact Us',
       subtitle: 'We are here for you. Feel free to contact us with any questions.',
       address: 'Address',

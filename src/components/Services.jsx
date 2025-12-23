@@ -40,7 +40,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
-            <span className="section-badge mb-3">Naše služby</span>
+            <span className="section-badge mb-3">{translations.nav.services}</span>
             <h2 className="section-title display-5 fw-bold mb-3">
               {services.title}
             </h2>
@@ -76,7 +76,7 @@ const Services = () => {
                     className="service-link btn btn-link p-0 d-flex align-items-center gap-2"
                     onClick={scrollToContact}
                   >
-                    <span>Zistiť viac</span>
+                    <span>{services.learnMore}</span>
                     <ArrowRight size={16} />
                   </button>
                 </div>
@@ -91,10 +91,10 @@ const Services = () => {
             <div className="row align-items-center">
               <div className="col-lg-8">
                 <h3 className="cta-title h4 fw-bold mb-2">
-                  Potrebujete poradiť s výberom služby?
+                  {services.ctaTitle}
                 </h3>
                 <p className="cta-text text-muted mb-lg-0">
-                  Kontaktujte nás a radi vám pomôžeme vybrať najlepšie riešenie pre váš úsmev.
+                  {services.ctaText}
                 </p>
               </div>
               <div className="col-lg-4 text-lg-end">
@@ -102,7 +102,7 @@ const Services = () => {
                   className="btn btn-primary btn-lg"
                   onClick={scrollToContact}
                 >
-                  Kontaktujte nás
+                  {services.ctaButton}
                 </button>
               </div>
             </div>

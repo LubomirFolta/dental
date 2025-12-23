@@ -3,6 +3,34 @@ import { translations } from '../i18n/translations';
 
 const LanguageContext = createContext();
 
+// Cookie helper functions
+const setCookie = (name, value, days = 365) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+};
+
+const getCookie = (name) => {
+  const nameEQ = `${name}=`;
+  const cookies = document.cookie.split(';');
+  for (let cookie of cookies) {
+    cookie = cookie.trim();
+    if (cookie.indexOf(nameEQ) === 0) {
+      return cookie.substring(nameEQ.length);
+    }
+  }
+  return null;
+};
+
+// Get initial language from cookie or default to Slovak
+const getInitialLanguage = () => {
+  const savedLanguage = getCookie('dental_language');
+  if (savedLanguage && (savedLanguage === 'sk' || savedLanguage === 'en')) {
+    return savedLanguage;
+  }
+  return 'sk'; // Slovak as default
+};
+
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -12,11 +40,18 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('sk'); // Slovak as default
+  const [language, setLanguageState] = useState(getInitialLanguage);
+
+  // Save language to cookie when it changes
+  const setLanguage = useCallback((lang) => {
+    setLanguageState(lang);
+    setCookie('dental_language', lang);
+  }, []);
 
   const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => (prev === 'sk' ? 'en' : 'sk'));
-  }, []);
+    const newLang = language === 'sk' ? 'en' : 'sk';
+    setLanguage(newLang);
+  }, [language, setLanguage]);
 
   const t = useCallback(
     (key) => {
@@ -27,7 +62,7 @@ export const LanguageProvider = ({ children }) => {
         if (value && typeof value === 'object') {
           value = value[k];
         } else {
-          return key; // Return key if translation not found
+          return key;
         }
       }
 

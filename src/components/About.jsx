@@ -30,14 +30,14 @@ const About = () => {
               {/* Experience Badge */}
               <div className="experience-badge">
                 <span className="badge-number">15+</span>
-                <span className="badge-text">rokov skúseností</span>
+                <span className="badge-text">{about.experienceYears}</span>
               </div>
             </div>
           </div>
 
           {/* Content Column */}
           <div className="col-lg-6">
-            <span className="section-badge mb-3">O nás</span>
+            <span className="section-badge mb-3">{about.badge}</span>
             <h2 className="section-title display-5 fw-bold mb-3">
               {about.title}
             </h2>
